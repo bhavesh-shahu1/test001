@@ -1,0 +1,63 @@
+<!-- <div layout="row" flex layout-padding layout-fill layout-align="center center">
+    <div flex="30" flex-lg="45" flex-md="70" flex-xs="100">
+        <md-card style="border: 3px solid #fff;border-radius: 10px;background: rgba(0,0,0,0.6);" >
+            <md-toolbar>
+                <div layout-padding>
+                    <img src="assets/images/logo.png">
+                </div>
+            </md-toolbar>
+
+            <md-content class="md-padding" style="background: rgba(0,0,0,0.6);">
+                <p translate>FORGOT.ENTER_EMAIL</p>
+                <form name="forgot" autocomplete="off">
+                    <md-input-container class="md-block">
+                        <label for="email" style="color: white" translate>FORGOT.EMAIL.LABEL</label>
+                        <input id="email" label="email" name="email" type="email" ng-model="vm.user.email" style="border-bottom: 1px solid #fff;color: white" required/>
+                        <div ng-messages="forgot.email.$error">
+                            <div ng-message when="required"><span translate>FORGOT.EMAIL.PLEASE_ENTER</span></div>
+                            <div ng-message when="email"><span translate>FORGOT.EMAIL.PLEASE_VALID</span></div>
+                        </div>
+                    </md-input-container>
+
+                    <md-button class="md-raised md-primary full-width margin-left-0 margin-right-0 margin-top-10 margin-bottom-10" style="background: #000; color: #d7294f" ng-click="vm.resetClick()" ng-disabled="forgot.$invalid" translate="FORGOT.RESET" aria-label="{{'FORGOT.RESET' | translate}}"></md-button>
+
+                    <md-button class="md-primary full-width margin-left-0 margin-right-0 margin-top-10 margin-bottom-10" style="background: #000; color: #d7294f" href="#/login" translate="FORGOT.LOGIN" aria-label="{{'FORGOT.LOGIN' | translate}}"></md-button>
+                </form>
+            </md-content>
+        </md-card>
+
+    </div>
+</div> -->
+
+
+
+<section class="container g-py-100">
+  <div class="row justify-content-center">
+    <div class="col-sm-10 col-md-9 col-lg-6">
+      <div class="g-brd-around g-brd-gray-light-v4 rounded g-py-40 g-px-30">
+        <header class="text-center mb-4">
+          <h2 class="h2 g-color-black g-font-weight-600">Reset Password</h2>
+        </header>
+        <!-- Form -->
+        <form  name="forgot" class="g-py-15">
+         
+          <div class="mb-4">
+            <input class="form-control g-color-black g-brd-gray-light-v3 g-py-15 g-px-15"  type="email" placeholder="email" name="email" id="email" ng-model="vm.user.email" required>
+            <div ng-messages="forgot.email.$error" ng-show="forgot.email.$touched">
+              <div ng-message when="required">
+                <span class="is-invalid" translate>Please enter your email.</span>
+              </div>
+              <div ng-message when="email">
+                    <span class="is-invalid" translate>Please enter vaild email address</span>
+                </div>
+            </div>
+          </div>
+          <button class="btn btn-md btn-block u-btn-primary g-rounded-50 g-py-13 mb-4" type="button" ng-click="vm.resetClick()" ng-disabled="forgot.$invalid" translate="FORGOT.RESET" translate="FORGOT.RESET" aria-label="{{'FORGOT.RESET' | translate}}"></button>
+          <button class="btn btn-md btn-block u-btn-primary g-rounded-50 g-py-13 mb-4" type="button" ng-click="vm.gotoLogin()" translate="FORGOT.LOGIN" aria-label="{{'FORGOT.LOGIN' | translate}}"></button>
+        </form>
+        
+    </div>
+  </div>
+</div>
+</section>
+<!-- End Signup -->

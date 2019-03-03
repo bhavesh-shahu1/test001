@@ -1,0 +1,170 @@
+<!-- <div class="modal-content">
+    <div class="modal-header">
+        <h6 class="tx-14 mg-b-0 tx-uppercase tx-inverse tx-bold" translate="">Create Help</h6>
+        <button type="button" class="close" aria-label="Close" ng-click="vm.cancelClick()">
+        <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body pd-25">
+        <form name="helpRequestForm">
+            <div class="form-group">
+                <label for="name">Title ----{{vm.submitted}}</label>
+                <input type="text" class="form-control" name="title" ng-model="vm.data.help_post_title" required ng-class="{'is-invalid': (helpRequestForm.title.$touched || vm.submitted) && helpRequestForm.title.$invalid}">
+                <div ng-messages="helpRequestForm.title.$error" ng-show="helpRequestForm.title.$touched || vm.submitted" class="invalid-feedback">
+                    <div ng-message when="required">
+                        <span translate>This is mandatory field.</span>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="name">Discription</label>
+                <textarea class="form-control" name="discription" ng-model="vm.data.help_post_descr" required ng-class="{'is-invalid': (helpRequestForm.discription.$touched || vm.submitted) && helpRequestForm.discription.$invalid}" rows="3"></textarea>
+                <div ng-messages="helpRequestForm.discription.$error" ng-show="helpRequestForm.discription.$touched || vm.submitted" class="invalid-feedback">
+                    <div ng-message when="required">
+                        <span translate>This is mandatory field.</span>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label translate>Category</label>
+                <select class="form-control" ng-model="vm.data.cat_id" name="category" required ng-class="{'is-invalid': (saveForm.category.$touched || vm.submitted) && saveForm.category.$invalid}" number-to-string>
+                    <option ng-repeat="item in vm.options.category" ng-value="item.value">
+                        {{item.label}}
+                    </option>
+                </select>
+                <div ng-messages="saveForm.category.$error" ng-show="saveForm.category.$touched || vm.submitted" class="invalid-feedback">
+                    <div ng-message when="required">
+                        <span translate>VALIDATION.REQUIRED</span>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label translate>Sub Category</label>
+                <select class="form-control" ng-model="vm.data.sub_cat_id" name="subCategory" required ng-class="{'is-invalid': (saveForm.subCategory.$touched || vm.submitted) && saveForm.subCategory.$invalid}" number-to-string>
+                    <option ng-repeat="item in vm.options.subCategory" ng-value="item.value">
+                        {{item.label}}
+                    </option>
+                </select>
+                <div ng-messages="saveForm.subCategory.$error" ng-show="saveForm.subCategory.$touched || vm.submitted" class="invalid-feedback">
+                    <div ng-message when="required">
+                        <span translate>VALIDATION.REQUIRED</span>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Tag
+                </label>
+                <tags-input ng-model="vm.data.tags" name="chips" display-property="label" replace-spaces-with-dashes="false" min-length="2">
+                </tags-input>
+            </div>
+        </form>
+    </div>
+    <div class="modal-footer">
+        <button ng-click="vm.submitted = true; vm.createHelpRequest(helpRequestForm.$valid)" class="btn btn-info tx-mont tx-medium tx-11 tx-uppercase pd-y-12 pd-x-25 tx-spacing-1" ng-disabled="helpRequestForm.$invalid">
+        Submit
+        <span ng-show="vm.setLoading"><i class="fa fa-spin fa-spinner"></i></span>
+        </button>
+        <button ng-click="vm.cancelClick()" type="button" class="btn btn-secondary ">Cancel</button>
+    </div>
+    
+</div> -->
+<md-dialog aria-label="create help request" flex="50" style="max-height: 92%;">
+<md-toolbar>
+<div class="md-toolbar-tools">
+    <h2 flex>
+    <span translate>Post Help</span>
+    </h2>
+    <md-button class="md-icon-button" ng-click="vm.cancelClick()" aria-label="cancel">
+    <i class="fa fa-times" aria-hidden="true"></i>
+    </md-button>
+</div>
+</md-toolbar>
+<md-dialog-content>
+<div class="md-dialog-content">
+    <form name="helpRequestForm">
+        <div class="form-group">
+            <label for="name">Title</label>
+            <input type="text" class="form-control" name="title" ng-model="vm.data.help_post_title" required ng-class="{'is-invalid': (helpRequestForm.title.$touched || vm.submitted) && helpRequestForm.title.$invalid}">
+            <div ng-messages="helpRequestForm.title.$error" ng-show="helpRequestForm.title.$touched || vm.submitted" class="invalid-feedback">
+                <div ng-message when="required">
+                    <span translate>This is mandatory field.</span>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="name">Discription</label>
+            <textarea class="form-control" name="discription" ng-model="vm.data.help_post_descr" required ng-class="{'is-invalid': (helpRequestForm.discription.$touched || vm.submitted) && helpRequestForm.discription.$invalid}" rows="3"></textarea>
+            <div ng-messages="helpRequestForm.discription.$error" ng-show="helpRequestForm.discription.$touched || vm.submitted" class="invalid-feedback">
+                <div ng-message when="required">
+                    <span translate>This is mandatory field.</span>
+                </div>
+            </div>
+        </div>
+        <!-- <div>
+            <md-button class="md-primary md-icon-button margin-left-20" ngf-select="vm.uploadPic($file,$invalidFiles)" accept="image/*" multiple aria-label="upload">
+            <i class="fa fa-edit" aria-hidden="true"><md-tooltip>Upload File</md-tooltip></i>
+            </md-button>
+        </div> -->
+        <!-- File Input -->
+  <!-- Plain File Input -->
+  <div class="form-group mb-0">
+    <p>Upload image</p>
+    <label class="u-file-attach-v2 g-color-gray-dark-v5 mb-0">
+      <input id="fileAttachment" name="file" type="file" ngf-select ="vm.uploadPic($file,$invalidFiles)" accept="image/*">
+      <!-- <input type="file" ngf-select ng-model="picFile" name="file"    
+             accept="image/*" 
+             ngf-model-invalid="errorFile"> -->
+      <i class="fa fa-upload g-font-size-16 g-pos-rel g-top-2 g-mr-5"></i>
+      <span class="js-value">Attach file</span>
+    </label>
+  </div>
+  <!-- End Plain File Input -->
+  <!-- End File Input -->
+        <div class="form-group">
+            <label translate>Category</label>
+            <select class="form-control" ng-model="vm.data.cat_id" name="category" required ng-class="{'is-invalid': (saveForm.category.$touched || vm.submitted) && saveForm.category.$invalid}" number-to-string ng-change="vm.getSubCategory()">
+                <option ng-repeat="item in vm.options.category" ng-value="item.value">
+                    {{item.label}}
+                </option>
+            </select>
+            <div ng-messages="saveForm.category.$error" ng-show="saveForm.category.$touched || vm.submitted" class="invalid-feedback">
+                <div ng-message when="required">
+                    <span translate>VALIDATION.REQUIRED</span>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label translate>Sub Category</label>
+            <select class="form-control" ng-model="vm.data.sub_cat_id" name="subCategory" required ng-class="{'is-invalid': (saveForm.subCategory.$touched || vm.submitted) && saveForm.subCategory.$invalid}" number-to-string>
+                <option ng-repeat="item in vm.options.subCategory" ng-value="item.value">
+                    {{item.label}}
+                </option>
+            </select>
+            <div ng-messages="saveForm.subCategory.$error" ng-show="saveForm.subCategory.$touched || vm.submitted" class="invalid-feedback">
+                <div ng-message when="required">
+                    <span translate>VALIDATION.REQUIRED</span>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label>Tag
+            </label>
+            <tags-input ng-model="vm.data.tags" name="chips" display-property="label" replace-spaces-with-dashes="false" min-length="2">
+            </tags-input>
+        </div>
+    </div>
+    <div layout-align="center center" layout="row" ng-if="vm.activated">
+    <md-progress-circular ng-disabled="!vm.activated" class="md-hue-2" md-diameter="20px"></md-progress-circular>
+</div>
+    </md-dialog-content>
+    <md-dialog-actions layout="row">
+    
+    <md-button ng-click="vm.submitted = true; vm.createHelpRequest(helpRequestForm.$valid)">
+    Save
+    </md-button>
+    <md-button ng-click="vm.cancelClick()" class="md-primary">
+    Cancle
+    </md-button>
+    </md-dialog-actions>
+</form>
+</md-dialog>

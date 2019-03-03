@@ -1,0 +1,30 @@
+<div class="container g-py-100">  <!-- g-py-20 -->
+  <div class="g-brd-left--lg g-brd-gray-light-v4 g-mb-80">
+          <div class="g-pl-20--lg">
+              <!-- Newsletter -->
+              <!-- <div class="g-mb-50"> -->
+                <h3 class="h5 g-color-black g-font-weight-600 mb-4">Refer to friends</h3>
+                <form name="referFriendForm" novalidate="true">
+                <div class="input-group">
+                  <span class="input-group-btn">
+                      <button class="btn u-btn-primary g-rounded-left-50 g-py-13 g-px-20" ng-click="vm.submitted = true; vm.referFriend(referFriendForm.$valid)">
+                        <i class="fa fa-address-card u-line-icon-pro g-pos-rel g-top-1"></i>
+                      </button>
+                    </span>
+                  <input class="form-control g-brd-primary g-placeholder-gray-dark-v5 border-left-0 g-rounded-right-50 g-px-15" type="email" name="email" id="email" ng-model="vm.data.email" ng-class="{'is-invalid': (referFriendForm.email.$touched || vm.submitted) && referFriendForm.email.$invalid}" placeholder="Enter your email ..." required="">
+                 <div ng-messages="referFriendForm.email.$error" ng-show="referFriendForm.email.$touched || vm.submitted" class="invalid-feedback">
+                <div ng-message when="required">
+                    <span translate>This is mandatory field.</span>
+                </div>
+            </div>
+                </div>
+              </form>
+              <!-- </div> -->
+              <!-- End Newsletter -->
+            
+
+             
+            </div>
+          </div>
+        </div>
+</div>
