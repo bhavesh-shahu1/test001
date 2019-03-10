@@ -1,1 +1,26 @@
 /* Add here all your css styles (customizations) */
+.home-main > div > div {
+	display: inline-block;
+	min-height: 300px;
+	background-color: #ddd; 
+}
+
+.nutrition-container > div {
+	min-height: 250px;
+}
+
+.nutrition-container > div > div {
+	border: 1px solid #ddd;
+    padding: 20px !important;
+    text-align: center;
+}
+
+.nutrition-container > div > div > div.img > img {
+	border-radius: 50%;
+}
+
+.nutrition-container > div > div > div.image-desc > label {
+    font-size: 20px;
+    margin-top: 20px;
+    text-transform: uppercase;
+}

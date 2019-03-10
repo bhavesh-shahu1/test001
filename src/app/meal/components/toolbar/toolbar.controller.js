@@ -19,6 +19,7 @@
         // vm.showUserList = showUserList;
         // vm.showUserProfile = showUserProfile;
         vm.logout = logout;
+        // vm.aboutus = aboutus;
         // vm.openHistory = openHistory;
         // vm.openSocialMedia = openSocialMedia;
         // vm.Timer = null;
@@ -30,6 +31,22 @@
             //     vm.videoInformation1 = JSON.parse(vm.videoInfo);
             //     vm.videoTitle = vm.videoInformation1.title;
             // }
+        }
+
+        $scope.aboutus = function() {
+            $state.go('default-layout.admin-layout.aboutus');
+        }
+
+        $scope.contactus = function() {
+            $state.go('default-layout.admin-layout.contactus');
+        }
+
+        $scope.home = function() {
+            $state.go('default-layout.admin-layout.home');
+        }
+
+        $scope.nutritions = function() {
+            $state.go('default-layout.admin-layout.nutritions');
         }
 
         // function openSocialMedia(action) {
